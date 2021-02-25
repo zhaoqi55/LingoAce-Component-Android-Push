@@ -1,0 +1,4 @@
+include ':common_push'
+include ':jiguang_android'
+include ':app'
+rootProject.name = "LingoAce-Component-Android-Push"

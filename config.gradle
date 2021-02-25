@@ -1,0 +1,42 @@
+ext {
+    android = [
+            compileSdkVersion: 30,
+            buildToolsVersion: "30.0.2",
+            minSdkVersion    : 21,
+            targetSdkVersion : 30,
+            versionCode      : 1,
+            versionName      : "1.0",
+    ]
+    dependencies = [
+            "appcompat": "androidx.appcompat:appcompat:1.2.0",
+            "constraintlayout" :"androidx.constraintlayout:constraintlayout:2.0.4",
+            "junit":"junit:junit:4.12",
+            "androidxjunit":"androidx.test.ext:junit:1.1.2",
+            "espresso": "androidx.test.espresso:espresso-core:3.3.0",
+            "jiguang":"jiguang"
+    ]
+
+    manifestPlaceholders = [
+            JPUSH_PKGNAME : "com.pplingo.lingoace_component_android_push",
+            JPUSH_APPKEY  : "7f37a290241ba3c68b235437",//值来自开发者平台取得的AppKey
+            JPUSH_CHANNEL : "default_developer",
+
+            //meizu_config_start
+            MEIZU_APPKEY  : "MZ-魅族的APPKEY",
+            MEIZU_APPID   : "MZ-魅族的APPID",
+            //meizu_config_end
+            //xiaomi_config_start
+            XIAOMI_APPID  : "MI-2882303761519068088",
+            XIAOMI_APPKEY : "MI-5191906867088",
+            //xiaomi_config_end
+            //oppo_config_start
+            OPPO_APPKEY   : "OP-oppo的APPKEY",
+            OPPO_APPID    : "OP-oppo的APPID",
+            OPPO_APPSECRET: "OP-oppo的APPSECRET",
+            //oppo_config_end
+            //vivo_config_start
+            VIVO_APPKEY   : "vivo的APPKEY",
+            VIVO_APPID    : "vivo的APPID",
+    ]
+
+}
