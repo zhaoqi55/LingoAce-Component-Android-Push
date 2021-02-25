@@ -34,8 +34,8 @@ ext {
 }
 根目录下的build.gradle需要在顶部添加apply from: "config.gradle"
 
-主项目的AndroidManifest.xml中需要添加：
-   <service
+         主项目的AndroidManifest.xml中需要添加：
+         <service
             android:name="com.pplingo.jiguang_android.JPushCustomService"
             android:process=":pushcore">
             <intent-filter>
@@ -67,6 +67,13 @@ ext {
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
+        
+        
+    build.gradle添加fcm相关依赖
+    implementation platform('com.google.firebase:firebase-bom:26.2.0')
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.android.support:multidex:1.0.3'
         
         over
 
