@@ -41,9 +41,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     compileOnly(name: 'com.heytap.msp-push-2.1.0', ext: 'aar')
-    api platform('com.google.firebase:firebase-bom:26.2.0')
-    api 'com.google.firebase:firebase-messaging'
-    api 'com.google.firebase:firebase-analytics'
-    api 'com.android.support:multidex:1.0.3'
+    implementation platform('com.google.firebase:firebase-bom:26.2.0')
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.android.support:multidex:1.0.3'
 
 }

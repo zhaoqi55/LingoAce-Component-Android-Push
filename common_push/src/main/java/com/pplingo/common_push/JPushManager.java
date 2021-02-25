@@ -74,13 +74,6 @@ public class JPushManager implements CommonPushManager {
 
 
     }
-
-
-    public CommPushCallBack getCommonPushCallBack() {
-        return callBack;
-    }
-
-
     public static JPushManager getInstance() {
         if (mInstance == null) {
             synchronized (JPushManager.class) {
