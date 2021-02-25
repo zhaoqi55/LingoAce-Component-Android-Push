@@ -1,16 +1,17 @@
 # LingoAce-Component-Android-Push
 极光推送Android端插件
 
-前置条件：FCM相关内容解锁 需要将FireBase官网下申请下来的google-services.json文件放置在app目录下
-并且将apply plugin: 'com.google.gms.google-services'添加到app目录下的build.gradl顶部
-华为推送相关解锁需要添加华为开发者官网申下来的agconnect-services.json文件放置在app目录下，
-并且将apply plugin: 'com.huawei.agconnect'添加到build.gradle顶部
-如果需要使用FCM通道 app根目录下build.gradle的dependencies中需要添加：classpath 'com.google.gms:google-services:4.3.4'
-如果需要使用华为通道 app根目录下build.gradle的dependencies中需要添加：classpath 'com.huawei.agconnect:agcp:1.4.2.300' 
-repositories 和 allprojects 下repositories中需要添加maven {url 'http://developer.huawei.com/repo/'}
+      前置条件：FCM相关内容解锁 需要将FireBase官网下申请下来的google-services.json文件放置在app目录下
+      并且将apply plugin: 'com.google.gms.google-services'添加到app目录下的build.gradl顶部
+      华为推送相关解锁需要添加华为开发者官网申下来的agconnect-services.json文件放置在app目录下，
+      并且将apply plugin: 'com.huawei.agconnect'添加到build.gradle顶部
+      如果需要使用FCM通道 app根目录下build.gradle的dependencies中需要添加：classpath 'com.google.gms:google-services:4.3.4'
+      如果需要使用华为通道 app根目录下build.gradle的dependencies中需要添加：classpath 'com.huawei.agconnect:agcp:1.4.2.300' 
+      repositories 和 allprojects 下repositories中需要添加maven {url 'http://developer.huawei.com/repo/'}
 
 需要在主目录下添加config.gradle,
-ext {
+ 
+        ext {
     manifestPlaceholders = [
             JPUSH_PKGNAME : "com.zts.firebaseapp",  
             JPUSH_APPKEY : "7f8c2bd1c2741cb2e70d5d93", //极光开发平台上注册的包名对应的appkey.
