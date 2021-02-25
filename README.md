@@ -1,7 +1,7 @@
 # LingoAce-Component-Android-Push
 极光推送Android端插件
 
-前置条件：FCM相关内容解锁 需要将FireBase官网下申请下来的google-services.json文件放置在app目录下
+前置条件：FCM相关内容解锁 需要将FireBase官网下申请下来的google-services.json文件放置在app目录下\n
 并且将apply plugin: 'com.google.gms.google-services'添加到app目录下的build.gradl顶部
 华为推送相关解锁需要添加华为开发者官网申下来的agconnect-services.json文件放置在app目录下，
 并且将apply plugin: 'com.huawei.agconnect'添加到build.gradle顶部
