@@ -3,6 +3,8 @@ package com.pplingo.common_push.manager;
 import android.content.Context;
 import android.service.controls.Control;
 
+import com.pplingo.common_push.callback.PushSeqCallBack;
+
 import java.util.Map;
 import java.util.Set;
 
@@ -40,52 +42,52 @@ public interface CommonPushManager {
      * @param conn
      * @param alias
      */
-    void setAlias(Context conn,String alias);
+    void setAlias(Context conn,String alias, PushSeqCallBack seqCallBack);
 
     /**
      * 获取别名 需要通过监听获取到别名
      * @param conn
      */
-    void getAlias(Context conn);
+    void getAlias(Context conn, PushSeqCallBack seqCallBack);
 
     /**
      * 删除别名
      * @param conn
      */
-    void deleteAlias(Context conn);
+    void deleteAlias(Context conn, PushSeqCallBack seqCallBack);
 
     /**
      * 设置标签
      * @param conn
      * @param Tags
      */
-    void setTags(Context conn, Set<String> Tags);
+    void setTags(Context conn, Set<String> Tags, PushSeqCallBack seqCallBack);
 
     /**
      * 添加标签
      * @param conn
      * @param Tags
      */
-    void addTags(Context conn,Set<String> Tags);
+    void addTags(Context conn,Set<String> Tags, PushSeqCallBack seqCallBack);
 
     /**
      * 获取全部标签
      * @param conn
      */
-    void getAllTags(Context conn);
+    void getAllTags(Context conn, PushSeqCallBack seqCallBack);
 
     /**
      * 清除tag
      * @param conn
      */
-    void cleanTags(Context conn);
+    void cleanTags(Context conn, PushSeqCallBack seqCallBack);
 
 
     /**
      * 查询标签
      * @param conn
      */
-    void checkTag(Context conn, Set<String> Tags);
+    void checkTag(Context conn, Set<String> Tags, PushSeqCallBack seqCallBack);
 
     /**
      * 停止推送

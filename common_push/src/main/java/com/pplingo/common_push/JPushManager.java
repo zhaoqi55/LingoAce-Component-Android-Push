@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.pplingo.common_push.bean.CommonPushResultBean;
 import com.pplingo.common_push.callback.CommPushCallBack;
+import com.pplingo.common_push.callback.PushSeqCallBack;
 import com.pplingo.common_push.manager.CommonPushManager;
 
 import org.json.JSONObject;
@@ -109,50 +110,58 @@ public class JPushManager implements CommonPushManager {
     }
 
     @Override
-    public void setAlias(Context conn, String alias) {
+    public void setAlias(Context conn, String alias, PushSeqCallBack seqCallBack)  {
         setTagAliasBean(ACTION_SET, alias, null, true);
+        seqCallBack.getSeq(sequence+1);
         setAliasAndTags(conn, tagAliasBean);
     }
 
     @Override
-    public void getAlias(Context conn) {
+    public void getAlias(Context conn, PushSeqCallBack seqCallBack) {
         setTagAliasBean(ACTION_GET, null, null, true);
+        seqCallBack.getSeq(sequence+1);
         setAliasAndTags(conn, tagAliasBean);
     }
 
     @Override
-    public void deleteAlias(Context conn) {
+    public void deleteAlias(Context conn, PushSeqCallBack seqCallBack) {
         setTagAliasBean(ACTION_DELETE, null, null, true);
+        seqCallBack.getSeq(sequence+1);
         setAliasAndTags(conn, tagAliasBean);
     }
 
     @Override
-    public void setTags(Context conn, Set<String> Tags) {
+    public void setTags(Context conn, Set<String> Tags, PushSeqCallBack seqCallBack) {
         setTagAliasBean(ACTION_SET, null, Tags, false);
+        seqCallBack.getSeq(sequence+1);
         setAliasAndTags(conn, tagAliasBean);
     }
 
     @Override
-    public void addTags(Context conn, Set<String> Tags) {
+    public void addTags(Context conn, Set<String> Tags, PushSeqCallBack seqCallBack) {
         setTagAliasBean(ACTION_ADD, null, Tags, false);
+        seqCallBack.getSeq(sequence+1);
         setAliasAndTags(conn, tagAliasBean);
     }
 
     @Override
-    public void getAllTags(Context conn) {
+    public void getAllTags(Context conn, PushSeqCallBack seqCallBack) {
         setTagAliasBean(ACTION_GET, null, null, false);
+        seqCallBack.getSeq(sequence+1);
         setAliasAndTags(conn, tagAliasBean);
     }
 
     @Override
-    public void cleanTags(Context conn) {
+    public void cleanTags(Context conn, PushSeqCallBack seqCallBack) {
         setTagAliasBean(ACTION_CLEAN, null, null, false);
+        seqCallBack.getSeq(sequence+1);
         setAliasAndTags(conn, tagAliasBean);
     }
 
     @Override
-    public void checkTag(Context conn, Set<String> Tags) {
+    public void checkTag(Context conn, Set<String> Tags, PushSeqCallBack seqCallBack) {
         setTagAliasBean(ACTION_CHECK, null, Tags, false);
+        seqCallBack.getSeq(sequence+1);
         setAliasAndTags(conn, tagAliasBean);
     }
 
