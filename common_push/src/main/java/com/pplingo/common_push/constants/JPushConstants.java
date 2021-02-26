@@ -9,7 +9,7 @@ package com.pplingo.common_push.constants;
 /**
  * 极光推送相关常量
  */
-public class Constants {
+public class JPushConstants {
 
     public static final String PUSH_MESSAGE_PERMISSION_POSTFIX = ".permission.JPUSH_MESSAGE";
     public static final String ACTION_CONNECTION_CHANGE = "cn.jpush.android.intent.CONNECTION";
