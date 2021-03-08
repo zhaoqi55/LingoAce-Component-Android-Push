@@ -12,6 +12,9 @@ import android.widget.Toast;
 import com.pplingo.common_push.JPushManager;
 import com.pplingo.common_push.bean.CommonPushResultBean;
 import com.pplingo.common_push.callback.CommPushCallBack;
+import com.pplingo.common_push.callback.PushSeqCallBack;
+
+import java.util.Map;
 
 import cn.jpush.android.api.JPushInterface;
 
@@ -42,18 +45,49 @@ public class MainActivity extends AppCompatActivity {
             public void onAliasOperatorResult(CommonPushResultBean commonBean) {
                 Log.e("MainActivity", "拿到了操作别名的回调");
             }
+
+            @Override
+            public void transmitReceiveRegistrationId(String rId) {
+
+            }
+
+            @Override
+            public void transmitMessageReceive(String title, Map<String, Object> extras) {
+
+            }
+
+            @Override
+            public void transmitNotificationOpen(String title, String alert, Map<String, Object> extras) {
+
+            }
+
+            @Override
+            public void transmitNotificationReceive(String title, String alert, Map<String, Object> extras) {
+
+            }
         };
         btnSetAlias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                JPushManager.getInstance().setAlias(MainActivity.this, "LingoAceComponentAndroidPush");
+                JPushManager.getInstance().setAlias(MainActivity.this, "LingoAceComponentAndroidPush", new PushSeqCallBack() {
+                    @Override
+                    public void getSeq(int seq) {
+                        Log.e("=====",""+seq);
+
+                    }
+                });
             }
         });
 
         btnGetAlias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                JPushManager.getInstance().getAlias(MainActivity.this);
+                JPushManager.getInstance().getAlias(MainActivity.this, new PushSeqCallBack() {
+                    @Override
+                    public void getSeq(int seq) {
+                        Log.e("=====",""+seq);
+                    }
+                });
             }
         });
 

@@ -31,5 +31,32 @@ public class CommonPushResultBean {
 
     public String mobileNumber;
 
-    public String toString;
+
+    public int getErrorCode() {
+        return this.errorCode;
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public Set<String> getTags() {
+        return tags;
+    }
+
+    public int getSequence() {
+        return sequence;
+    }
+
+    public boolean isTagCheckStateResult() {
+        return isTagCheckStateResult;
+    }
+
+    public boolean isTagCheckOperator() {
+        return isTagCheckOperator;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
 }
